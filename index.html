@@ -175,16 +175,10 @@ p,.soft{line-height:1.85;color:var(--soft);font-size:clamp(.95rem,2vw,1.07rem)}
   gap:0;
 }
 
-/* type-on cursor */
-.typewriter-wrap{overflow:hidden}
+/* no cursor on typed line */
 #typed-line{
-  border-right:3px solid rgba(255,255,255,.6);
-  padding-right:4px;
-  white-space:nowrap;overflow:hidden;
   display:inline-block;
-  animation:blink .75s step-end infinite;
 }
-@keyframes blink{50%{border-color:transparent}}
 
 .hero-sub{
   font-size:clamp(1rem,2.2vw,1.2rem);
@@ -633,51 +627,96 @@ video{
 ════════════════════════════════════ */
 @media(max-width:900px){
   .hero-card{grid-template-columns:1fr;gap:20px;padding:20px}
-  .hero-img-outer{min-height:320px;max-height:440px}
+  .hero-img-outer{min-height:300px;max-height:420px}
   .photo-stage{min-height:900px}
-  .panel{padding:24px 20px}
+  .panel{padding:22px 18px}
   .proposal{padding:40px 24px 36px}
+  .hero-stats{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:600px){
-  .wrap{width:96vw;padding:14px 0 80px}
-  .glass{border-radius:22px}
-  .hero{min-height:auto;padding:10px 0 28px}
-  .hero-card{padding:14px;gap:14px;border-radius:22px}
-  .hero-img-outer{min-height:280px;max-height:360px;border-radius:18px}
-  h1{font-size:clamp(2.5rem,11vw,3.5rem);line-height:.95}
-  .hero-stats{gap:8px}
-  .stat-card .num{font-size:1.5rem}
-  section{padding:10px 0}
-  .panel{padding:18px 16px}
-  video{max-height:440px}
+  .wrap{width:96vw;padding:10px 0 70px}
+  .glass{border-radius:20px}
 
-  /* photo stage stacked */
+  /* Hero */
+  .hero{min-height:auto;padding:8px 0 20px}
+  .hero-card{
+    grid-template-columns:1fr;
+    padding:16px;gap:16px;border-radius:20px;
+  }
+  .hero-left{padding:2px 0}
+  h1{font-size:clamp(2.6rem,12vw,3.8rem);line-height:.92}
+  .hero-sub{font-size:.95rem;margin:6px 0 16px}
+  .hero-body{font-size:.94rem;margin-bottom:20px}
+  .badge{font-size:.72rem;padding:7px 14px;margin-bottom:14px}
+  .tags{gap:8px;margin-bottom:24px}
+  .tag{font-size:.8rem;padding:7px 13px}
+  .cta-row{flex-direction:column;gap:10px}
+  .btn-primary,.btn-ghost{width:100%;text-align:center;padding:15px 20px}
+
+  /* Hero media */
+  .hero-img-outer{min-height:260px;max-height:340px;border-radius:16px}
+  .hero-img-outer img{object-position:center top}
+  .hero-stats{grid-template-columns:repeat(3,1fr);gap:8px}
+  .stat-card{padding:12px 8px;border-radius:14px}
+  .stat-card .num{font-size:1.4rem}
+  .stat-card .lbl{font-size:.68rem}
+
+  /* Sections */
+  section{padding:8px 0}
+  .panel{padding:16px 14px}
+  h2{font-size:clamp(1.7rem,7vw,2.4rem)}
+  .section-head{margin-bottom:18px}
+
+  /* Video */
+  video{max-height:420px}
+  .film-strip{height:22px}
+  .film-perf{width:13px;height:11px}
+  .cinema-caption{padding:14px 16px;gap:10px}
+  .cinema-caption .cap-icon{font-size:1.1rem}
+  .cinema-caption .cap-text{font-size:.82rem}
+
+  /* Photo stage stacked */
   .photo-stage{
     min-height:0;height:auto;
     display:flex;flex-direction:column;align-items:center;
-    gap:0;padding:18px 14px 22px;overflow:visible;
-    border-radius:22px;
+    gap:0;padding:16px 12px 20px;overflow:visible;
+    border-radius:20px;
   }
   .photo-card{
     position:relative!important;left:auto!important;right:auto!important;
     top:auto!important;bottom:auto!important;
-    width:calc(50% - 8px);max-width:none;
+    width:calc(50% - 7px);max-width:none;
     animation:none!important;transform:none!important;
+    border-radius:3px;
   }
-  .photo-card:hover{transform:none!important}
-  .photo-row{display:flex;gap:12px;width:100%;margin-bottom:12px;justify-content:center}
+  .photo-card:hover{transform:none!important;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+  .photo-row{display:flex;gap:13px;width:100%;margin-bottom:13px;justify-content:center}
   .center-letter{
     position:relative;left:auto;top:auto;transform:none;
-    width:100%;margin:14px 0;padding:18px;border-radius:18px;
+    width:100%;margin:12px 0;padding:18px 16px;border-radius:16px;
   }
-  .quiz-grid{grid-template-columns:1fr;gap:16px}
-  .proposal{padding:32px 18px 28px;border-radius:22px}
-  .proposal-actions{flex-direction:column;gap:12px}
+  .polaroid-tag{font-size:.82rem}
+
+  /* Quiz */
+  .quiz-grid{grid-template-columns:1fr;gap:14px}
+  .quiz-card{border-radius:18px}
+  .quiz-inner{padding:18px 16px}
+  .question{font-size:.98rem}
+  .answer-btn{font-size:.87rem;padding:11px 13px}
+  .gift-inner{margin:0 16px 16px;padding:14px}
+
+  /* Date */
+  .date-reveal{padding:28px 18px}
+  .date-big{font-size:clamp(2rem,10vw,3rem)}
+
+  /* Proposal */
+  .proposal{padding:30px 16px 26px;border-radius:20px}
+  .proposal h2{font-size:clamp(1.8rem,7vw,2.6rem)}
+  .proposal-body{font-size:.95rem}
+  .proposal-question{font-size:clamp(1.4rem,6vw,2rem);margin:22px 0 26px}
+  .proposal-actions{flex-direction:column;gap:10px}
   .proposal-actions .btn-primary,
   .proposal-actions .btn-ghost{width:100%;text-align:center}
-  .date-big{font-size:clamp(2rem,9vw,3.2rem)}
-  .cta-row .btn-primary,.cta-row .btn-ghost{width:100%;text-align:center}
-  .cta-row{flex-direction:column}
 }
 </style>
 </head>
@@ -773,13 +812,6 @@ video{
     <div class="video-bg-glow vbg1"></div>
     <div class="video-bg-glow vbg2"></div>
     <div class="glass panel reveal">
-      <div class="section-head">
-        <div class="badge">🎬 &nbsp;our little film</div>
-        <h2>Our cinematic <span class="blue-text">world</span></h2>
-        <p class="soft" style="max-width:600px;margin-top:12px;">
-          No song this time — just the feeling. Just visuals. Just the little things that make you, <em>you</em>.
-        </p>
-      </div>
 
       <div class="cinema-frame">
         <div class="film-strip">
